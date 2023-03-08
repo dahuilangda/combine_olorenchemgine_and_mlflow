@@ -58,7 +58,7 @@ After training the hERG classification model, set the trained model to productio
 mlflow models serve -m "models:/hERG_cls/Production" -h 0.0.0.0 -p 1234 --env-manager local
 ```
 
-*   Now we can use the standard API to predict the hERG classification of a small molecule.
+Now we can use the standard API to predict the hERG classification of a small molecule.
 
 ```bash
 curl -X POST -H "Content-Type:application/json" --data '{"dataframe_split": {"columns":["Drug"], "data": [["c1ccccc1"]]}}' http://127.0.0.1:1234/invocations
