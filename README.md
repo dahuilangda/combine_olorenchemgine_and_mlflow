@@ -78,7 +78,7 @@ python predictor_oce_mlflow.py --smiles "CC(=O)Nc1ccc2c(c1)C(=O)N(Cc1ccc(Cl)cc1)
         --port: port number of the MLflow service
 ```
 
-we can also train a regression model using the 'hERG_central' dataset in TDC by running the following command.
+We can also train a regression model using the 'hERG_central' dataset in TDC by running the following command.
 * The model is trained very slowly, please be patient.
 * In addition to training the regression model, we also trained the confidence interval (80%).
 ```bash
