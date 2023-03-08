@@ -50,8 +50,7 @@ df.to_csv('data/hERG_central_hERG_at_10uM.csv', index=False)
 python training_oce_mlflow.py -i data/hERG_Karim.csv -m Drug -p Y -t cls -o models/hERG_Karim
 ```
 
-### After training the hERG classification model, set the trained model to production mode in MLflow ([https://mlflow.org/docs/latest/models.html#production-mode](https://mlflow.org/docs/latest/models.html#production-mode))
-
+*   After training the hERG classification model, set the trained model to production mode in MLflow ([https://mlflow.org/docs/latest/models.html#production-mode](https://mlflow.org/docs/latest/models.html#production-mode))
 *   Assuming we named this model "hERG\_cls", we can deploy the service using the command below.
 *   The service will be deployed at [http://127.0.0.1:1234/invocations](http://127.0.0.1:1234/invocations)
 
@@ -59,13 +58,13 @@ python training_oce_mlflow.py -i data/hERG_Karim.csv -m Drug -p Y -t cls -o mode
 mlflow models serve -m "models:/hERG_cls/Production" -h 0.0.0.0 -p 1234 --env-manager local
 ```
 
-### Now we can use the standard API to predict the hERG classification of a small molecule.
+*   Now we can use the standard API to predict the hERG classification of a small molecule.
 
 ```bash
 curl -X POST -H "Content-Type:application/json" --data '{"dataframe_split": {"columns":["Drug"], "data": [["c1ccccc1"]]}}' http://127.0.0.1:1234/invocations
 ```
 
-### Use "predictor\_oce\_mlflow.py" script to predict both classification and sensitivity using "oce.VisualizePredictionSensitivity".
+*   Use "predictor\_oce\_mlflow.py" script to predict both classification and sensitivity using "oce.VisualizePredictionSensitivity".
 
 ```bash
 python predictor_oce_mlflow.py --smiles "CC(=O)Nc1ccc2c(c1)C(=O)N(Cc1ccc(Cl)cc1)C2=O" \
