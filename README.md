@@ -21,8 +21,7 @@ pip install pytdc
 Usage:
 ------
 
-### Download data from the 'hERG\_Karim' dataset in TDC (Therapeutics Data Commons) and saves it as a CSV file
-
+*   Download data from the 'hERG\_Karim' dataset in TDC (Therapeutics Data Commons) and saves it as a CSV file
 *   'hERG\_Karim' dataset in TDC is a binary classification dataset.
 
 ```python
@@ -32,8 +31,7 @@ df = data.get_data()
 df.to_csv('data/hERG_Karim.csv', index=False)
 ```
 
-### Download data from the 'hERG\_central' dataset in TDC (Therapeutics Data Commons) and saves it as a CSV file
-
+*   Download data from the 'hERG\_central' dataset in TDC (Therapeutics Data Commons) and saves it as a CSV file
 *   'hERG\_central' dataset in TDC is a regression dataset, which contains 3 labels. "hERG\_at\_10uM" is the label we want to use.
 
 ```python
